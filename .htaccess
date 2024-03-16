@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^$ /pages/loginPage.php [R=301,L]

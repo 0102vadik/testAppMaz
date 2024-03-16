@@ -1,0 +1,20 @@
+[
+  {
+    "idUser": "1",
+    "userLogin": "vadim123",
+    "userName": "Милько Вадим Дмитриевич",
+    "userPassword": "ca17dd4eea3f25e0036827d825d3eda3"
+  },
+  {
+    "idUser": "2",
+    "userLogin": "ivanLog",
+    "userName": "Серафимов Иван Николаевич",
+    "userPassword": "da7a9feafce0d0dc96a2d0602c47616e"
+  },
+  {
+    "idUser": "3",
+    "userLogin": "topDevops",
+    "userName": "Никитин Илья Владимирович",
+    "userPassword": "0e9231b2f8361ee026749569fbcfcfc5"
+  }
+]
