@@ -3,12 +3,14 @@
 namespace repositories;
 
 use Exception;
+use IUserRepositoryRepository;
 use models\User;
 
 require_once "../constants/StorageRoute.php";
 require_once '../models/User.php';
+require_once '../contracts/IUserRepositoryRepository.php';
 
-class UserRepository
+class UserRepository implements IUserRepositoryRepository
 {
     protected $userList;
 
@@ -29,10 +31,10 @@ class UserRepository
     /**
      * @throws Exception
      */
-    public function getByLoginPassword($login, $password)
+    public function getById($id)
     {
         foreach ($this->userList as $user) {
-            if ($user->getUserLogin() == $login && $user->getUserPassword() == $password) {
+            if ($user->getIdUser() == $id) {
                 return $user;
             }
         }

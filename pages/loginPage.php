@@ -4,6 +4,10 @@ use controllers\LoginController;
 
 require_once('../controllers/LoginController.php');
 
+if (!empty($_COOKIE['login'])) {
+    header('Location: /pages/homePage.php');
+    die;
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['login']) && !empty($_POST['password'])) {
     set_error_handler("customErrorHandler");
     $loginController = new LoginController();
@@ -31,8 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['login']) && !empty($
             <strong>Ошибка!</strong> <?php echo $_COOKIE['error'] ?>
         </div>
     <?php } ?>
-
-    <form class="form-outline mb-4" action="loginPage.php" method="POST">
+    <form class="form-outline mb-4 my-5" action="loginPage.php" method="POST">
         <!--Login input-->
         <div class="form-outline mb-4">
             <label class="form-label" for="formLoginInput">Логин</label>

@@ -2,7 +2,8 @@
 
 namespace controllers;
 
-class LogoutController
+require_once 'BaseController.php';
+class LogoutController extends BaseController
 {
     public function logout()
     {

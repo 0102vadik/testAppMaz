@@ -1,10 +1,10 @@
 <?php
 
+use controllers\HomeController;
 use controllers\LogoutController;
-use services\UserService;
 
-require_once('../services/UserService.php');
 require_once('../controllers/LogoutController.php');
+require_once('../controllers/HomeController.php');
 
 if (isset($_GET['method'])) {
     $method = $_GET['method'];
@@ -24,8 +24,8 @@ if (empty($_COOKIE['login'])) {
     die;
 }
 
-$userService = new UserService();
-$userStringList = $userService->getAllUserFormatStringArray();
+$homeController = new HomeController();
+$userStringList = $homeController->index();
 ?>
 <!doctype html>
 <html lang="en">
@@ -36,7 +36,7 @@ $userStringList = $userService->getAllUserFormatStringArray();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Document</title>
+    <title>MazApp</title>
 </head>
 <body>
 <div>

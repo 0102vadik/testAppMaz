@@ -2,6 +2,7 @@
 
 namespace services;
 
+use Exception;
 use repositories\UserRepository;
 
 require_once "../repositories/UserRepository.php";
