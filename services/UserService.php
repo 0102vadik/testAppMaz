@@ -24,6 +24,7 @@ class UserService
     public function getAllUserFormatStringArray()
     {
         $userList = $this->userRepository->getAll();
+        if (empty($userList)) return [];
         foreach ($userList as $user) {
             $userStringList[] = $user->toArray();
         }
